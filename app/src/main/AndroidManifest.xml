@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppGrupo6">
+
         <activity
             android:name=".view.LoginActivity"
             android:exported="true"
