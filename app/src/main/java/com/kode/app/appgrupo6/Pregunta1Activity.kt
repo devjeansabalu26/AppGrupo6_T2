@@ -1,4 +1,4 @@
-package com.kode.app.appgrupo6.view
+package com.kode.app.appgrupo6
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,17 +8,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.kode.app.appgrupo6.R
-import com.kode.app.appgrupo6.databinding.ActivityLoginBinding
+import com.kode.app.appgrupo6.databinding.ActivityPregunta1Binding
 import com.kode.app.appgrupo6.util.Constantes
 
-class LoginActivity : AppCompatActivity(), View.OnClickListener {
-    private lateinit var binding: ActivityLoginBinding
+class Pregunta1Activity : AppCompatActivity(), View.OnClickListener {
+    private lateinit var binding: ActivityPregunta1Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityLoginBinding.inflate(layoutInflater)
+        binding = ActivityPregunta1Binding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -43,7 +42,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
         if (validarCredenciales(usuario, password)) {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, Pregunta2Activity::class.java)
             intent.putExtra("usuario", usuario)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

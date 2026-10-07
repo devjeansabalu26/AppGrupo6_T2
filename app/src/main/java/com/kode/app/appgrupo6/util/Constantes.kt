@@ -6,10 +6,8 @@ class Constantes {
 
     companion object {
         val LISTA_USUARIOS: List<Usuario> = listOf(
-            Usuario("i202400001", "70000001"),
-            Usuario("i202400002", "70000002"),
-            Usuario("i202400003", "70000003"),
-            Usuario("i202400004", "70000004")
+            Usuario("Jean", "123456789"),
+            Usuario("Allison", "123456789"),
         )
     }
 }
