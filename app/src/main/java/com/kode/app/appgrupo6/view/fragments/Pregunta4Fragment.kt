@@ -61,7 +61,7 @@ class Pregunta4Fragment : Fragment() {
             return
         }
 
-        // Convertir el texto a entero
+
         val prendasDefectuosas = textoPrendas.toIntOrNull()
 
         // Validar que sea un número válido
