@@ -6,8 +6,9 @@ class Constantes {
 
     companion object {
         val LISTA_USUARIOS: List<Usuario> = listOf(
-            Usuario("Jean", "123456789"),
-            Usuario("Allison", "123456789"),
+            Usuario("Jean", "123456789"),//lleva solo a la pregunta 1
+            Usuario("Allison", "123456789"),//lleva solo a la pregunta 2
+            Usuario("lia", "123456789"),//este debe mostra la pregunta 4
         )
     }
 }

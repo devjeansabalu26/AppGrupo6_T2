@@ -7,14 +7,118 @@
     tools:context=".view.fragments.Pregunta4Fragment">
 
     <TextView
-        android:id="@+id/tvtitulo"
+        android:id="@+id/tvDescuentoTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textpregunta4"
-        android:textSize="22sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:text="Descuento por reposición "
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="36dp" />
+
+    <TextView
+        android:id="@+id/tvExcesoPrendas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Exceso de prendas  "
+        app:layout_constraintBottom_toTopOf="@+id/tvDescuentoTotal"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <TextView
+        android:id="@+id/tvFallasRegistradas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Fallas registradas "
+        app:layout_constraintBottom_toTopOf="@+id/tvExcesoPrendas"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text=" ✓ Nivel de merma excedido "
+        app:layout_constraintBottom_toTopOf="@+id/tvFallasRegistradas"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Resultado "
+        tools:layout_editor_absoluteX="52dp"
+        tools:layout_editor_absoluteY="494dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Control de prendas defectuosas"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="105dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text=" Mermas de confección"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="122dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text=" Máximo permitido: 10 prendas"
+        android:textColorLink="#FF5722"
+        app:layout_constraintBottom_toTopOf="@+id/tvMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/etPrendasDefectuosas"
+        tools:layout_editor_absoluteX="57dp" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Cantidad de prendas falladas "
+        app:layout_constraintBottom_toTopOf="@+id/etPrendasDefectuosas"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:layout_editor_absoluteX="112dp" />
+
+    <EditText
+        android:id="@+id/etPrendasDefectuosas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        tools:layout_editor_absoluteX="95dp" />
+
+    <Button
+        android:id="@+id/btnCalcularMerma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text=" CALCULAR MERMA "
+        app:layout_constraintBottom_toTopOf="@+id/etPrendasDefectuosas"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="80dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
