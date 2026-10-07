@@ -35,22 +35,55 @@ class Pregunta1Activity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun login(usuario: String, password: String) {
+
         if (usuario.isBlank() || password.isBlank()) {
-            Toast.makeText(applicationContext,
+
+            Toast.makeText(
+                applicationContext,
                 getString(R.string.msgcamposvacios),
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
+
             return
         }
+
         if (validarCredenciales(usuario, password)) {
+
+            val pregunta = obtenerPregunta(usuario)
+
             val intent = Intent(this, Pregunta2Activity::class.java)
+
             intent.putExtra("usuario", usuario)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.putExtra("pregunta", pregunta)
+
+            intent.flags =
+                Intent.FLAG_ACTIVITY_NEW_TASK or
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK
+
             startActivity(intent)
             finish()
+
         } else {
-            Toast.makeText(applicationContext,
+
+            Toast.makeText(
+                applicationContext,
                 getString(R.string.msgloginerror),
-                Toast.LENGTH_LONG).show()
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun obtenerPregunta(usuario: String): Int {
+
+        return when (usuario.lowercase()) {
+
+            "jean" -> 1
+
+            "allison" -> 2
+
+            "lia" -> 4
+
+            else -> 0
         }
     }
 

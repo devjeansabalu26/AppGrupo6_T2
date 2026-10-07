@@ -14,7 +14,6 @@ class Pregunta4Fragment : Fragment() {
     private var _binding: FragmentPregunta4Binding? = null
     private val binding get() = _binding!!
 
-    // Valores establecidos por el ejercicio
     private val limiteMerma = 10
     private val costoBase = 100.00
     private val costoPorPrenda = 28.00
@@ -49,7 +48,6 @@ class Pregunta4Fragment : Fragment() {
 
         val textoPrendas = binding.etPrendasDefectuosas.text.toString().trim()
 
-        // Validar que el usuario haya ingresado un valor
         if (textoPrendas.isEmpty()) {
 
             Toast.makeText(
@@ -61,10 +59,8 @@ class Pregunta4Fragment : Fragment() {
             return
         }
 
-        // Convertir el texto a entero
         val prendasDefectuosas = textoPrendas.toIntOrNull()
 
-        // Validar que sea un número válido
         if (prendasDefectuosas == null) {
 
             Toast.makeText(
@@ -76,7 +72,6 @@ class Pregunta4Fragment : Fragment() {
             return
         }
 
-        // Validar que no sea negativo
         if (prendasDefectuosas < 0) {
 
             Toast.makeText(
@@ -88,40 +83,33 @@ class Pregunta4Fragment : Fragment() {
             return
         }
 
-        // Mostrar cantidad de fallas
         binding.tvFallasRegistradas.text =
             prendasDefectuosas.toString()
 
-        // Caso 1: dentro del margen permitido
         if (prendasDefectuosas <= limiteMerma) {
 
             binding.tvMensaje.text =
                 "Nivel de merma dentro del margen admisible."
 
-            binding.tvExcesoPrendas.text = "0" // error todos son textview
+            binding.tvExcesoPrendas.text = "0"
 
             binding.tvDescuentoTotal.text =
                 String.format(Locale.US, "S/ %.2f", 0.0)
 
         } else {
 
-            // Calcular exceso
             val excesoPrendas =
                 prendasDefectuosas - limiteMerma
 
-            // Calcular descuento
             val descuentoTotal =
                 costoBase + (excesoPrendas * costoPorPrenda)
 
-            // Mostrar mensaje
             binding.tvMensaje.text =
                 "Nivel de merma excede el margen admisible."
 
-            // Mostrar exceso
             binding.tvExcesoPrendas.text =
                 excesoPrendas.toString()
 
-            // Mostrar descuento
             binding.tvDescuentoTotal.text =
                 String.format(
                     Locale.US,
