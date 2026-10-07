@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.Pregunta2Fragment">
+    tools:context=".view.fragments.Pregunta5Fragment">
 
     <TextView
         android:id="@+id/tvtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textpregunta2"
+        android:text="@string/textpregunta5"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
