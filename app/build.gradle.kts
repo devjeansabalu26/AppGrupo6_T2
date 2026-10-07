@@ -3,6 +3,9 @@ plugins {
 }
 
 android {
+    buildFeatures {
+        viewBinding = true
+    }
     namespace = "com.kode.app.appgrupo6"
     compileSdk {
         version = release(37)

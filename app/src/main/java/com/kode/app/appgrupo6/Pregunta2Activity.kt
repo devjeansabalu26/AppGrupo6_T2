@@ -13,11 +13,11 @@ class Pregunta2Activity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Instanciar e inicializar ViewBinding
+
         binding = ActivityPregunta2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar listener para las pestañas del BottomNavigationView
+
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_p2 -> {
@@ -29,8 +29,8 @@ class Pregunta2Activity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    // Implementación de la interfaz View.OnClickListener
+
     override fun onClick(v: View?) {
-        // Método de la interfaz disponible para eventos click de la vista
+        //eventos de click de boto pregunt
     }
 }
