@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.kode.app.appgrupo6.databinding.FragmentPregunta1Binding
+import com.kode.app.appgrupo6.databinding.FragmentPregunta5Binding
 
-class Pregunta1Fragment : Fragment() {
-    private var _binding: FragmentPregunta1Binding? = null
+class Pregunta5Fragment : Fragment() {
+    private var _binding: FragmentPregunta5Binding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -16,7 +16,7 @@ class Pregunta1Fragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPregunta1Binding.inflate(inflater, container, false)
+        _binding = FragmentPregunta5Binding.inflate(inflater, container, false)
         return binding.root
     }
 
