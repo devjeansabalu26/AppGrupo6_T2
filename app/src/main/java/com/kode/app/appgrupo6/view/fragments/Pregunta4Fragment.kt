@@ -88,20 +88,14 @@ class Pregunta4Fragment : Fragment() {
             return
         }
 
-        // Mostrar cantidad de fallas
-        binding.tvFallasRegistradas.text =
-            "Fallas registradas: $prendasDefectuosas"
-
         // Caso 1: dentro del margen permitido
         if (prendasDefectuosas <= limiteMerma) {
 
             binding.tvMensaje.text =
                 "Nivel de merma dentro del margen admisible."
 
-            binding.tvExcesoPrendas.text = "Exceso de prendas: 0"
-
-            binding.tvDescuentoTotal.text =
-                String.format(Locale.US, "Descuento por reposición: S/ %.2f", 0.0)
+            // Solo se muestra el mensaje
+            mostrarDetalle(false)
 
         } else {
 
@@ -117,18 +111,31 @@ class Pregunta4Fragment : Fragment() {
             binding.tvMensaje.text =
                 "Nivel de merma excede el margen admisible."
 
+            // Mostrar cantidad de fallas
+            binding.tvFallasRegistradas.text =
+                "Fallas registradas: $prendasDefectuosas"
+
             // Mostrar exceso
             binding.tvExcesoPrendas.text =
-                "Exceso de prendas: $excesoPrendas"
+                "Exceso de prendas defectuosas: $excesoPrendas"
 
             // Mostrar descuento
             binding.tvDescuentoTotal.text =
                 String.format(
                     Locale.US,
-                    "Descuento por reposición: S/ %.2f",
+                    "Descuento total por reposición: S/ %.2f",
                     descuentoTotal
                 )
+
+            mostrarDetalle(true)
         }
+    }
+
+    private fun mostrarDetalle(visible: Boolean) {
+        val visibilidad = if (visible) View.VISIBLE else View.GONE
+        binding.tvFallasRegistradas.visibility = visibilidad
+        binding.tvExcesoPrendas.visibility = visibilidad
+        binding.tvDescuentoTotal.visibility = visibilidad
     }
 
     override fun onDestroyView() {
