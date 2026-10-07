@@ -90,7 +90,7 @@ class Pregunta4Fragment : Fragment() {
 
         // Mostrar cantidad de fallas
         binding.tvFallasRegistradas.text =
-            prendasDefectuosas.toString()
+            "Fallas registradas: $prendasDefectuosas"
 
         // Caso 1: dentro del margen permitido
         if (prendasDefectuosas <= limiteMerma) {
@@ -98,10 +98,10 @@ class Pregunta4Fragment : Fragment() {
             binding.tvMensaje.text =
                 "Nivel de merma dentro del margen admisible."
 
-            binding.tvExcesoPrendas.text = "0" // error todos son textview
+            binding.tvExcesoPrendas.text = "Exceso de prendas: 0"
 
             binding.tvDescuentoTotal.text =
-                String.format(Locale.US, "S/ %.2f", 0.0)
+                String.format(Locale.US, "Descuento por reposición: S/ %.2f", 0.0)
 
         } else {
 
@@ -119,13 +119,13 @@ class Pregunta4Fragment : Fragment() {
 
             // Mostrar exceso
             binding.tvExcesoPrendas.text =
-                excesoPrendas.toString()
+                "Exceso de prendas: $excesoPrendas"
 
             // Mostrar descuento
             binding.tvDescuentoTotal.text =
                 String.format(
                     Locale.US,
-                    "S/ %.2f",
+                    "Descuento por reposición: S/ %.2f",
                     descuentoTotal
                 )
         }

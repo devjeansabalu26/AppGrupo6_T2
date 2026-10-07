@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.kode.app.appgrupo6.FrutaAdapter
+import com.kode.app.appgrupo6.adapter.FrutaAdapter
 import com.kode.app.appgrupo6.databinding.FragmentPregunta5Binding
 import com.kode.app.appgrupo6.model.Fruta
 

@@ -1,4 +1,4 @@
-package com.kode.app.appgrupo6
+package com.kode.app.appgrupo6.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
