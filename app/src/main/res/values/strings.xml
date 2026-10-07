@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">AppGrupo6</string>
+    <string name="textusuario">Usuario</string>
+    <string name="textpassword">Password</string>
+    <string name="textlogin">INGRESAR</string>
+    <string name="textbienvenido">Bienvenido</string>
+    <string name="msgcamposvacios">Ingrese usuario y contraseña</string>
+    <string name="msgloginerror">Usuario o contraseña incorrectos</string>
+    <string name="textpregunta1">Pregunta 1</string>
+    <string name="textpregunta2">Pregunta 2</string>
+    <string name="textpregunta3">Pregunta 3</string>
+    <string name="textpregunta4">Pregunta 4</string>
 </resources>

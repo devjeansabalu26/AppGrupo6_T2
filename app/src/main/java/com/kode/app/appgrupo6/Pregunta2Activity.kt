@@ -4,7 +4,12 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.kode.app.appgrupo6.databinding.ActivityPregunta2Binding
+import com.kode.app.appgrupo6.view.fragments.Pregunta1Fragment
+import com.kode.app.appgrupo6.view.fragments.Pregunta2Fragment
+import com.kode.app.appgrupo6.view.fragments.Pregunta3Fragment
+import com.kode.app.appgrupo6.view.fragments.Pregunta4Fragment
 
 class Pregunta2Activity : AppCompatActivity(), View.OnClickListener {
 
@@ -13,24 +18,46 @@ class Pregunta2Activity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Instanciar e inicializar ViewBinding
+
         binding = ActivityPregunta2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configurar listener para las pestañas del BottomNavigationView
+
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
+                R.id.nav_p1 -> {
+                    mostrarFragmento(Pregunta1Fragment())
+                    true
+                }
                 R.id.nav_p2 -> {
                     Toast.makeText(this, "Pregunta 2 - Allison", Toast.LENGTH_SHORT).show()
+                    mostrarFragmento(Pregunta2Fragment())
+                    true
+                }
+                R.id.nav_p3 -> {
+                    mostrarFragmento(Pregunta3Fragment())
+                    true
+                }
+                R.id.nav_p4 -> {
+                    mostrarFragmento(Pregunta4Fragment())
                     true
                 }
                 else -> true
             }
         }
+        if (savedInstanceState == null) {
+            binding.bottomNavigation.selectedItemId = R.id.nav_p1
+        }
     }
 
-    // Implementación de la interfaz View.OnClickListener
+    private fun mostrarFragmento(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+    }
+
+
     override fun onClick(v: View?) {
-        // Método de la interfaz disponible para eventos click de la vista
+        //eventos de click de boto pregunt
     }
 }
